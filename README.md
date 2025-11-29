@@ -61,3 +61,28 @@
 </body>
 </html>
 
+/* Dark Gaming Theme Colors */
+:root {
+    --dark-bg: #1a1a1a;
+    --light-text: #f0f0f0;
+    --accent-color: #e74c3c; /* Bright red/orange for highlights */
+    --secondary-color: #34495e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-bg); 
+    color: var(--light-text);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
