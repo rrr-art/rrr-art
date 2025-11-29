@@ -57,12 +57,26 @@
         <p>&copy; 2025 Pixel Pulse. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
-<head>
-    <meta charset="UTF-8">
-    
-    
-    <link rel="stylesheet" href="style.css"> 
-</head>(--dark-bg: #1a1a1a;)
+    <script src="script.js">/* Dark Gaming Theme Colors */
+:root {
+    --dark-bg: #1a1a1a; /* Very dark gray/black */
+    --light-text: #f0f0f0;
+    --accent-color: #e74c3c; 
+    --secondary-color: #34495e; /* Secondary background for panels */
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Applying the black background to the entire page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-bg); /* This line makes the background black/very dark gray */
+    color: var(--light-text); /* This makes the text white */
+}
+/* ... rest of your CSS ... */
