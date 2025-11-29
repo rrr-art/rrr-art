@@ -57,13 +57,9 @@
         <p>&copy; 2025 Pixel Pulse. All rights reserved.</p>
     </footer>
 
-    <script src="script.js">/* Dark Gaming Theme Colors */
-:root {
-    --dark-bg: #1a1a1a; /* Very dark gray/black */
-    --light-text: #f0f0f0;
-    --accent-color: #e74c3c; 
-    --secondary-color: #34495e; /* Secondary background for panels */
-}
+    <script src="script.js">
+    /* Dark Gaming Theme Colors */
+:root {--dark-bg: #1a1a1a; /* Very dark gray/black */--light-text: #f0f0f0;--accent-color: #e74c3c;--secondary-color:#34495e;/*Secondary background for panels */}
 
 /* Global Styles */
 * {
