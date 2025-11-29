@@ -66,5 +66,4 @@
     
     <link rel="stylesheet" href="style.css"> 
 </head>
-*/background
-(--dark-bg: #1a1a1a;)
+The:root variables (like --dark-bg and --accent-colour)
