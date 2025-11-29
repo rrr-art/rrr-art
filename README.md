@@ -60,4 +60,10 @@
     <script src="script.js"></script>
 </body>
 </html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pixel Pulse - Your Gaming Hub</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
 (--dark-bg: #1a1a1a;)
