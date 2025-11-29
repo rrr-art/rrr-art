@@ -61,11 +61,7 @@
 </body>
 </html>
 </head>
-/* Dark Gaming Theme Colors */
-:root {
-    --dark-bg: #1a1a1a;
-    --light-text: #f0f0f0;
-    --accent-color: #e74c3c; /* Bright red/orange for highlights */
+{--dark-bg: #1a1a1a;-}{-light-text: #f0f0f0;}{--accent-color: #e74c3c;} /* Bright red/orange for highlights */
     --secondary-color: #34495e;
 }
 
