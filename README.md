@@ -61,4 +61,4 @@
 </body>
 </html>
 
-(--dark-bg: #1a1a1a;-)
+(--dark-bg: #1a1a1a;)
