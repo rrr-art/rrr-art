@@ -57,22 +57,27 @@
         <p>&copy; 2025 Pixel Pulse. All rights reserved.</p>
     </footer>
 
-    <script src="script.js">
-    /* Dark Gaming Theme Colors */
-:root {--dark-bg: #1a1a1a; /* Very dark gray/black */--light-text: #f0f0f0;--accent-color: #e74c3c;--secondary-color:#34495e;/*Secondary background for panels */}
-
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    <script src="script.js">/* Styling the Navigation Bar (Header) */
+header {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    padding: 1rem 0;
 }
 
-/* Applying the black background to the entire page */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: var(--dark-bg); /* This line makes the background black/very dark gray */
-    color: var(--light-text); /* This makes the text white */
+nav ul li a {
+    color: var(--light-text); /* Ensure links in the nav are white */
 }
-/* ... rest of your CSS ... */
+
+/* Styling the Main Content and Sidebar containers */
+#main-content {
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#sidebar {
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
