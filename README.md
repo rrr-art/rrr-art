@@ -60,7 +60,7 @@
     <script src="script.js"></script>
 </body>
 </html>
-
+</body>
 /* Dark Gaming Theme Colors */
 :root {
     --dark-bg: #1a1a1a;
