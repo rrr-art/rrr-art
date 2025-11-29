@@ -60,5 +60,4 @@
     <script src="script.js"></script>
 </body>
 </html>
-
 (--dark-bg: #1a1a1a;)
