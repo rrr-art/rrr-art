@@ -62,9 +62,9 @@
 </html>
 <head>
     <meta charset="UTF-8">
-    <title>Pixel Pulse - Your Gaming Hub
+    
     
     <link rel="stylesheet" href="style.css"> 
 </head>
-
+*/background
 (--dark-bg: #1a1a1a;)
