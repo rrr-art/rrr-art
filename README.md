@@ -62,7 +62,7 @@
 </html>
 <head>
     <meta charset="UTF-8">
-    <title>Pixel Pulse - Your Gaming Hub</title>
+    <title>Pixel Pulse - Your Gaming Hub
     
     <link rel="stylesheet" href="style.css"> 
 </head>
