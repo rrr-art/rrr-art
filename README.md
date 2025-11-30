@@ -1,83 +1,62 @@
+// server.js (Simplified Example)
+const express = require('express');
+const app = express();
+const http = require('http').Server(app);
+// Initialize Socket.IO
+const io = require('socket.io')(http);
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Pulse - Your Gaming Hub</title>
-    <link rel="stylesheet" href="style.css">
-    </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">Pixel Pulse</div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Community</a></li>
-            </ul>
-        </nav>
-    </header>
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html'); // Serves your main chat page
+});
 
-    <section id="featured-game">
-        <div class="hero-content">
-            <h1>Featured: Eldoria Saga - A Review</h1>
-            <p>Dive into the epic world and see if the graphics live up to the hype!</p>
-            <a href="#" class="btn-read-more">Read Full Review</a>
-        </div>
-    </section>
+// Start the server
+http.listen(3000, () => {
+  console.log('Listening on *:3000');
+});io.on('connection', (socket) => {
+  console.log('A user connected');
 
-    <div class="container">
-        <main id="main-content">
-            <article class="post-card">
-                <h2>Top 10 RPGs to Play This Winter</h2>
-                <p class="meta">By GameMaster | Nov 29, 2025</p>
-                <img src="images/rpg_preview.jpg" alt="Preview of RPG games">
-                <p>From open-world epics to cozy indies, we break down the best games to sink hundreds of hours into.</p>
-                <a href="#">Continue Reading...</a>
-            </article>
+  // 1. User Authentication (Crucial for "Private")
+  // You'll need logic here to associate a 'socket.id' with a 'User ID'
+  // For example, when a user logs in, store their User ID and socket ID.
+  socket.on('login', (userId) => {
+    userSocketMap[userId] = socket.id; // Map User ID to their unique socket ID
+  });
 
-            </main>
+  // 2. Handling Private Messages
+  socket.on('private message', ({ recipientId, message }) => {
+    const recipientSocketId = userSocketMap[recipientId];
 
-        <aside id="sidebar">
-            <div class="widget">
-                <h3>Popular Tags</h3>
-                <span class="tag">#FPS</span>
-                <span class="tag">#Indie</span>
-                <span class="tag">#Esports</span>
-            </div>
-            <div class="widget">
-                <h3>Latest Videos</h3>
-                <p>Check out our latest gameplay trailer!</p>
-            </div>
-        </aside>
-    </div>
+    if (recipientSocketId) {
+      // Send the message only to the intended recipient's socket
+      io.to(recipientSocketId).emit('new private message', { senderId: 'Your ID', message: message });
+    }
+  });<ul id="messages"></ul>
+<form id="form" action="">
+  <input id="m" autocomplete="off" /><button>Send</button>
+</form>
+<script src="/socket.io/socket.io.js"></script>
 
-    <footer>
-        <p>&copy; 2025 Pixel Pulse. All rights reserved.</p>
-    </footer>
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+    // Remove the user from your online map here
+  });
+});// client.js (or inside your HTML script tags)
+const socket = io(); // Connects to the server
 
-    <script src="script.js">/* Styling the Navigation Bar (Header) */
-header {
-    background-color: var(--secondary-color);
-    color: var(--light-text);
-    padding: 1rem 0;
-}
+// Send a message
+document.getElementById('form').onsubmit = function(e) {
+  e.preventDefault();
+  const message = document.getElementById('m').value;
+  const recipientId = 'Other User ID'; // Logic to get the chat partner's ID
 
-nav ul li a {
-    color: var(--light-text); /* Ensure links in the nav are white */
-}
+  socket.emit('private message', { recipientId, message });
+  document.getElementById('m').value = '';
+  return false;
+};
 
-/* Styling the Main Content and Sidebar containers */
-#main-content {
-    background: var(--secondary-color);
-    padding: 20px;
-    border-radius: 8px;
-}
-
-#sidebar {
-    background: var(--secondary-color);
-    padding: 20px;
-    border-radius: 8px;
-}
-
+// Receive a message
+socket.on('new private message', (data) => {
+  const item = document.createElement('li');
+  item.textContent = `Private from ${data.senderId}: ${data.message}`;
+  document.getElementById('messages').appendChild(item);
+});
