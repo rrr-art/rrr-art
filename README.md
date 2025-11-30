@@ -1,4 +1,4 @@
-// server.js (Simplified Example)
+</head>// server.js (Simplified Example)
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
     userSocketMap[userId] = socket.id; // Map User ID to their unique socket ID
   });
 
-  // 2. Handling Private Messages
+  </body>// 2. Handling Private Messages
   socket.on('private message', ({ recipientId, message }) => {
     const recipientSocketId = userSocketMap[recipientId];
 
@@ -63,3 +63,6 @@ socket.on('new private message', (data) => {
   item.textContent = `Private from ${data.senderId}: ${data.message}`;
   document.getElementById('messages').appendChild(item);
 });
+git add.const http = require('http').Server(app);
+const io = require('socket.io')(http); // Pass http
+// ... then use http.listen()
