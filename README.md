@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
 // Start the server
 http.listen(3000, () => {
   console.log('Listening on *:3000');
-});io.on('connection', (socket) => {
+});
+io.on('connection', (socket) => {
   console.log('A user connected');
 
   // 1. User Authentication (Crucial for "Private")
@@ -30,7 +31,8 @@ http.listen(3000, () => {
       // Send the message only to the intended recipient's socket
       io.to(recipientSocketId).emit('new private message', { senderId: 'Your ID', message: message });
     }
-  });<ul id="messages"></ul>
+  });
+ (index.html) <ul id="messages"></ul>
 <form id="form" action="">
   <input id="m" autocomplete="off" /><button>Send</button>
 </form>
@@ -40,7 +42,8 @@ http.listen(3000, () => {
     console.log('User disconnected');
     // Remove the user from your online map here
   });
-});// client.js (or inside your HTML script tags)
+});
+// client.js (or inside your HTML script tags)
 const socket = io(); // Connects to the server
 
 // Send a message
