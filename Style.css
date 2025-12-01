@@ -1,0 +1,89 @@
+/* Dark Gaming Theme Colors */
+:root {
+    --dark-bg: #1a1a1a;
+    --light-text: #f0f0f0;
+    --accent-color: #e74c3c; /* Bright red/orange for highlights */
+    --secondary-color: #34495e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* --- Layout Styling --- */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    /* Use CSS Grid for the two-column layout */
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Main content takes 3 parts, sidebar 1 part */
+    gap: 30px;
+}
+
+/* --- Main Content Styling --- */
+#main-content {
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.post-card {
+    background: #2c3e50; /* Slightly different dark shade */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.post-card-img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+/* --- Sidebar Styling --- */
+#sidebar {
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.widget h3 {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--accent-color);
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    color: var(--dark-bg);
+}
+
+/* --- Responsive Layout (Crucial for all modern sites) --- */
+@media (max-width: 900px) {
+    .container {
+        /* Stack the content and sidebar vertically on smaller screens */
+        grid-template-columns: 1fr;
+    }
+}
