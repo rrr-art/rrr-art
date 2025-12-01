@@ -173,4 +173,167 @@ nav ul li a {
         <div class="p-3 bg-white border-t border-gray-200">
             <form id="message-form" class="flex space-x-2">
                 <input type="text" id="message-input" placeholder="Type your message
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Pulse - Your Gaming Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header>
+        <div class="logo">Pixel Pulse</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="featured-game">
+        <div class="hero-content">
+            <h1>Featured: Elden Sega - A Review</h1>
+            <p>Dive deep into the epic world and see if the graphics live up to the hype</p>
+            <p><a href="#">Read Full Review</a></p>
+        </div>
+    </section>
+
+    <div class="container">
+        <main id="main-content">
+            <article class="post-card">
+                <h2>Top 10 RPGs to Play This Winter</h2>
+                <p class="post-meta">Nov 20, 2025 | By GameMaster</p>
+                <img class="post-card-img" src="images/rpg_preview.jpg" alt="Preview of RPG games">
+                <p>From open-world epics to cozy indies, we break down the best games to sink hundreds of hours into.</p>
+                <p><a href="#">Continue Reading...</a></p>
+            </article>
+        </main>
+
+        <aside id="sidebar">
+            <div class="widget">
+                <h3>Popular Tags</h3>
+                <span class="tag">#RPGs</span>
+                <span class="tag">#Indies</span>
+                <span class="tag">#Esports</span>
+            </div>
+
+            <div class="widget">
+                <h3>Latest Videos</h3>
+                <p>Check out our latest gameplay trailer!</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Pixel Pulse. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>/* Dark Gaming Theme Colors */
+:root {
+    --dark-bg: #1a1a1a;
+    --light-text: #f0f0f0;
+    --accent-color: #e74c3c; /* Bright red/orange for highlights */
+    --secondary-color: #34495e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* --- Layout Styling --- */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    /* Use CSS Grid for the two-column layout */
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Main content takes 3 parts, sidebar 1 part */
+    gap: 30px;
+}
+
+/* --- Main Content Styling --- */
+#main-content {
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.post-card {
+    background: #2c3e50; /* Slightly different dark shade */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.post-card-img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+/* --- Sidebar Styling --- */
+#sidebar {
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.widget h3 {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--accent-color);
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    color: var(--dark-bg);
+}
+
+/* --- Responsive Layout (Crucial for all modern sites) --- */
+@media (max-width: 900px) {
+    .container {
+        /* Stack the content and sidebar vertically on smaller screens */
+        grid-template-columns: 1fr;
+    }
+}// Get the button and the navigation list from the HTML
+// Note: You would need to add <button id="menu-btn">Menu</button> 
+// and id="main-nav" to your <ul> in the HTML for this to work.
+const menuButton = document.getElementById('menu-btn');
+const navList = document.getElementById('main-nav');
+
+// Only run if both elements exist
+if (menuButton && navList) {
+    // Add an event listener to the button
+    menuButton.addEventListener('click', function() {
+        // Toggles a CSS class named 'open' on the navigation list
+        // This is where CSS takes over to show or hide the menu
+        navList.classList.toggle('open');
+    });
+}
