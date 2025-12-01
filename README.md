@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rrr-art  Website</title>
+    <title>RR Website</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #2c3e50; color: #ecf0f1; padding: 20px; }
         h1 { color: #e74c3c; border-bottom: 2px solid #34495e; padding-bottom: 10px; }
@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="chat-container">
-        <h1>Rrr -art Chat: Global Room</h1>
+        <h1>RR Chat: Global Room</h1>
         
         <input type="text" id="username-input" placeholder="Your Rrr-art Username" value="RrrUser">
         
