@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rrr Chat - Real-Time Website</title>
+    <title>Rrr-art - Real-Time Website</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #2c3e50; color: #ecf0f1; padding: 20px; }
         h1 { color: #e74c3c; border-bottom: 2px solid #34495e; padding-bottom: 10px; }
